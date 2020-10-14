@@ -88,7 +88,17 @@ ORDER BY name;
 
 # 10
 ```sql
-
+CREATE VIEW solution AS
+SELECT C.id AS id
+, C.fname AS fname
+, C.lname AS lname
+, C.city AS city
+, C.state AS state
+, C.zip AS zip
+, B.charge AS charge
+, substr(B.tstamp, 0, 10) AS billdate
+FROM customer C, billing B
+WHERE B.id = C.id
 ```
 
 # 11
