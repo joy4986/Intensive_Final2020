@@ -103,5 +103,11 @@ WHERE B.id = C.id
 
 # 11
 ```sql
-
+use default;
+select p.name, count(*)
+from order_details o, products p
+where o.prod_id = p.prod_id
+and p.brand = 'Dualcore'
+group by p.name
+limit 3;
 ```
