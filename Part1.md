@@ -110,12 +110,12 @@ sudo yum install -y wget
 
 sudo vi /etc/yum.repos.d/cloudera-manager.repo
 
-[cloudera-manager]
-name = Cloudera Manager, Version 5.15.2
-baseurl = https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.15.2/
-gpgkey = https://archive.cloudera.com/redhat/cdh/RPM-GPG-KEY-cloudera
-gpgcheck = 1
-sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera
+[cloudera-manager]  
+name = Cloudera Manager, Version 5.15.2  
+baseurl = https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.15.2/  
+gpgkey = https://archive.cloudera.com/redhat/cdh/RPM-GPG-KEY-cloudera  
+gpgcheck = 1  
+sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera  
 
 ### 2. Install a supported Oracle JDK
 모든 서버에 설치
@@ -126,9 +126,9 @@ sudo yum install -y java-1.8.0-openjdk-devel
 #### 2. 자바 홈 환경 변수 추가
 sudo vi /etc/profile
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk/jre
-export PATH=$PATH:$JAVA_HOME/bin
-세팅 후 재접속
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk/jre  
+export PATH=$PATH:$JAVA_HOME/bin  
+세팅 후 재접속  
 
 ### 3. Install a supported JDBC Connector
 모든 서버에 설치
@@ -151,14 +151,14 @@ sudo yum install mariadb-server
 sudo systemctl stop mariadb
 
 sudo vi /etc/my.cnf
-
+```
 [mysqld]
-datadir=/var/lib/mysql
-socket=/var/lib/mysql/mysql.sock
-transaction-isolation = READ-COMMITTED
-# Disabling symbolic-links is recommended to prevent assorted security risks;
-# to do so, uncomment this line:
-symbolic-links = 0
+datadir=/var/lib/mysql  
+socket=/var/lib/mysql/mysql.sock  
+transaction-isolation = READ-COMMITTED  
+# Disabling symbolic-links is recommended to prevent assorted security risks;  
+# to do so, uncomment this line:  
+symbolic-links = 0  
 # Settings user and group are ignored when systemd is used.
 # If you need to run mysqld under a different user or group,
 # customize your systemd unit file for mariadb according to the
@@ -211,12 +211,13 @@ pid-file=/var/run/mariadb/mariadb.pid
 # include all files from the config directory
 #
 !includedir /etc/my.cnf.d
+```
 sudo systemctl enable mariadb
 
 sudo systemctl start mariadb
 
 sudo /usr/bin/mysql_secure_installation
-
+```
 [...]
 Enter current password for root (enter for none):
 OK, successfully used password, moving on...
@@ -238,7 +239,7 @@ installation should now be secure.
 
 Thanks for using MariaDB!
 password : 1234
-
+```
 ### 5. Create the databases and access grants you will need
 mysql -u root -p
 
