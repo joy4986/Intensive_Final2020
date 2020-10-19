@@ -1,6 +1,4 @@
-_**Instructor Comment: Please provide screenshots of query output next time._**
-_**I am also not sure why you have an answer for problem 11.**_
-_**We only had problem 11 last yearwhich was removed this year**_
+_**Instructor Comment: Please provide screenshots of query output next time. I am also not sure why you have an answer for problem 11. We only had problem 11 last yearwhich was removed this year**_
 
 # 1
 ```sql
