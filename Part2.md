@@ -50,6 +50,8 @@ SELECT id, initcap(fname) AS fname, INITCAP(lname), address, city, state, zip
 FROM employee2;
 ```
 
+_**Instructor Comment: Need to ETL the different Zipcode formats**_
+
 # 5
 ```sql
 SELECT fname, lname, city, state
@@ -60,6 +62,8 @@ SELECT fname, lname, city, state
 FROM customer
 WHERE city='Palo Alto' AND state='CA';
 ```
+
+_**Instructor Comment: Solution should produce a tab delimited string instead of fields**_
 
 # 6
 ```sql
