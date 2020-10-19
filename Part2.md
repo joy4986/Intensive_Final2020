@@ -1,3 +1,5 @@
+_**Instructor Comment: Please provide screenshots of query output next time**_
+
 # 1
 ```sql
 SELECT A.id, A.type, A.status, A.amount, (A.amount - B.avg_amount) AS difference
